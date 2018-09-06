@@ -1,5 +1,5 @@
 <?php
-	if(isset($_GET['prenom']) AND isset($_GET['nom']) AND isset($_GET['repeter'])){
+	if(!empty($_GET['prenom']) AND isset($_GET['prenom']) AND !empty($_GET['nom']) AND isset($_GET['nom']) AND !empty($_GET['repeter']) AND isset($_GET['repeter'])) {
 		
 		$_GET['repeter'] = (int) $_GET['repeter'];
 	
@@ -8,16 +8,13 @@
 				for($i = 0; $i < $_GET['repeter'] ; $i++){
 
 					echo 'Bonjour ' .$_GET['prenom'] . ' ' . $_GET['nom'] . ' !<br />';
+				
 				}
 			}
+}
+
+		else {
+			echo 'Renseignez les données';
 	}
-
-	
-	else{
-
-		echo 'Il faut renseigner un nom et un prénom';
-
-	}
-
 ?>
 
